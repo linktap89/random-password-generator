@@ -1,2 +1,2 @@
-# random-password-generator
-Random PWD Generator
+# password-generator
+Password Generator
