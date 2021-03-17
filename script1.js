@@ -19,21 +19,24 @@ const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(91, 96))
   .concat(arrayFromLowToHigh(123, 126));
 
+  
+
+
 function generatePassword() {
   var passwordLength = window.prompt("choose a password length between 8 & 128")
   if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128 ){
     var passwordLengthvalue = parseInt(passwordLength);
   } else {
-    window.alert("You selected an invalid number, please try again");
+    window.alert("read the instructions loser, press 'ok' and try again");
     return
   }
-  var lowerCase = window.confirm("Would you like to use lower case characters?");
-  var upperCase = window.confirm("Would you like to use upper case characters?");
-  var numbers = window.confirm("Would you like to use numbers?");
-  var specialCharacters = window.confirm("Would you like to use like special characters?");
+  var lowerCase = window.confirm("would you like lower case characters?");
+  var upperCase = window.confirm("would you like upper case characters?");
+  var numbers = window.confirm("would you like numbers?");
+  var specialCharacters = window.confirm("would you like special characters?");
 
 
-  var lowerCaseanswer = 0; 
+  var lowerCaseanswer = 0;
   if (lowerCase === true){
    lowerCaseanswer = true 
   } else {
@@ -58,18 +61,18 @@ function generatePassword() {
     specialCharactersanswer = false
   }
   let charCodes = [];
-  if (lowerCase) {
-    charCodes = charCodes.concat(LOWERCASE_CODES);
-  }
-  if (upperCase) {
-    charCodes = charCodes.concat(UPPERCASE_CODES);
-  }
-  if (specialCharacters) {
-    charCodes = charCodes.concat(SYMBOL_CODES);
-  }
-  if (numbers) {
-    charCodes = charCodes.concat(NUMBER_CODES);
-  }
+    if (lowerCaseanswer == true) {
+      charCodes = charCodes.concat(LOWERCASE_CODES);
+    }
+    if (upperCaseanswer == true) {
+     charCodes = charCodes.concat(UPPERCASE_CODES);
+    }
+    if (specialCharactersanswer == true) {
+      charCodes = charCodes.concat(SYMBOL_CODES);
+    }
+    if (numberAnswer == true) {
+      charCodes = charCodes.concat(NUMBER_CODES);
+    }
     const passwordCharacters = [];
     for (let i = 0; i < passwordLengthvalue; i++) {
       const characterCode = charCodes[Math.floor(Math.random() * charCodes.length)];
