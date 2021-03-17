@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 // addEventListener to button
 generateBtn.addEventListener("click", writePassword);
 
-let arrayFromLowtoHighNum = (low, high) => {
+const arrayFromLowtoHighNum = (low, high) => {
     const array = [];
     for (let i = low; i <= high; i++){
         array.push(i);
@@ -19,12 +19,15 @@ const SYMBOLS_CODES = arrayFromLowtoHighNum(33,47)
 .concat(arrayFromLowToHighNum(91,96))
 .concat(arrayFromLowToHighNum(123,126));
 
-// Password variables 
-var lowerCase = window.confirm("Would you like to use lower case characters?");
-var upperCase = window.confirm("Would you like to use upper case characters?");
-var numbers = window.confirm("Would you like to use numbers?");
-var specialCharacters = window.confirm("Would you like special characters?");
-
+// Choose character length
+function generatePassword() {
+    var passwordLength = window.prompt("Choose a password length between 8 & 218")
+    if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128 {} else {
+        // window alert
+        window.alert("You did not enter a valid number, Click OK to try again.");
+        return
+    }
+}
 // Password response
 var lowerCaseAnswer = 0;
 if(lowerCase === true){
