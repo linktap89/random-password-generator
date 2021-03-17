@@ -11,59 +11,40 @@ const arrayFromLowtoHighNum = (low, high) => {
     return array;
 };
 
-const UPPERCASE_CODES = arrayFromLowtoHighNum(65,90);
-const LOWERCASE_CODES = arrayFromLowtoHighNum(97,122);
-const NUMBER_CODES = arrayFromLowtoHighNum(48,57);
-const SYMBOLS_CODES = arrayFromLowtoHighNum(33,47)
+const UPPERCASE_CODES = arrayFromLowToHighNum(65,90);
+const LOWERCASE_CODES = arrayFromLowToHighNum(97,122);
+const NUMBER_CODES = arrayFromLowToHighNum(48,57);
+const SYMBOLS_CODES = arrayFromLowToHighNum(33,47)
 .concat(arrayFromLowToHighNum(58,64))
 .concat(arrayFromLowToHighNum(91,96))
 .concat(arrayFromLowToHighNum(123,126));
 
 // Choose character length
 function generatePassword() {
-    var passwordLength = window.prompt("Choose a password length between 8 & 218")
-    if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128 {} else {
+    var passwordLength = window.prompt("Choose a password length between 8 & 128")
+    if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128) {} else {
         // window alert
         window.alert("You did not enter a valid number, Click OK to try again.");
         return
-    }
 }
-// Password response
-var lowerCaseAnswer = 0;
-if(lowerCase === true){
-    lowerCaseAnswer = true
-} else {
-    lowerCaseAnswer = false
-}
-var upperCaseAnswer = 0;
-if (upperCase === true){
-    upperCaseAnswer = true
-} else { 
-    upperCaseAnswer = false
-}
-var nummberAnswer = 0;
-if(number === true){
-    nummberAnswer = true
-} else { 
-    nummberAnswer = false
-}
-var specialCharactersAnswer = 0;
-if (specialCharacters === true){
-    specialCharactersAnswer = true
-} else {
-    specialCharactersAnswer = false
-}
-let charCode = [];
-if (lowerCaseAnswer == true) {
-    charCodes = charCode.concat(LOWERCASE_CODES);
-}
-if (upperCase == true) {
-    charCodes = charCode.concat(UPPERCASE_CODES);
-}
-if (specialCharacters == true) {
-    charCodes = charCode.concat(SYMBOLS_CODES);
-}
-if (nummberAnswer == true) {
-    charCodes = charCode.concat(NUMBER_CODES);
-}
+// Password variables
+ var lowerCase = window.confirm("Would you like to use lower case characters?");
+ var upperCase = window.confirm("Would you like to use upper case characters?");
+ var numbers = window.confirm("Would you like to use numbers?");
+ var specialCharacters = window.confirm("Would you like to use special characters?");
 
+ let charCodes = [];
+ if (lowerCase) {
+     charCodes = charCodes.concat(LOWERCASE_CODES);
+ }
+ if (upperCase) = charCodes.concat(UPPERCASE_CODES);
+}
+if (numbers) = charCodes.concat(NUMBER_CODES);
+}
+if (charCodes.length === 0){
+    alert("Please choose at least one set of characters");
+    return ""
+}
+const passwordCharacters = Array.from({length:passwordLength}, () => {
+    const characterCode = charCodes[Math.floor(Math.random()*
+})
