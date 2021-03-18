@@ -20,7 +20,7 @@ const SYMBOL_CODES = arrayFromLowToHigh(33, 47)
   .concat(arrayFromLowToHigh(123, 126));
 
 function generatePassword() {
-  var passwordLength = window.prompt("choose a password length between 8 & 128")
+  var passwordLength = window.prompt("Choose a password length between 8 & 128")
   if (parseInt(passwordLength) >= 8 && parseInt(passwordLength) <= 128 ){
     var passwordLengthvalue = parseInt(passwordLength);
   } else {
